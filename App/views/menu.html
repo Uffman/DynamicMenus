@@ -1,0 +1,19 @@
+﻿<ul class="dropdown-menu" data-bind="foreach: items">
+    <!-- ko if: $data.text !== undefined -->
+    <li data-bind="css: { disabled: !command.canExecute(), 'dropdown-submenu': hasSubMenu }">
+        <!-- ko ifnot: $data.hasSubMenu -->
+        <a href="#" tabindex="-1" data-bind="command: command">
+            <span data-bind="text: text"></span>
+        </a>
+        <!-- /ko -->
+        <!-- ko if: $data.hasSubMenu -->
+        <a tabindex="-1" data-bind="text: text"></a>
+            <!-- ko compose: { view: 'views/menu.html', model: $data } -->
+            <!-- /ko -->
+        <!-- /ko -->
+    </li>
+    <!-- /ko -->
+    <!-- ko if: $data.divider !== undefined -->
+    <li class="divider"></li>
+    <!-- /ko -->
+</ul>

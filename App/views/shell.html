@@ -1,0 +1,9 @@
+﻿<div>
+    <ul class="nav nav-pills menu-bar" data-bind="foreach: menus">
+        <li class="dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" data-bind="text: text"></a>
+            <!-- ko compose: { view: 'views/menu.html', model: $data } -->
+            <!-- /ko -->
+        </li>
+    </ul>
+</div>
